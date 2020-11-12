@@ -67,11 +67,11 @@ hermana(X, Y) :-
     X \= Y,
     mujer(X).
 
-progenitor('René', 'Douglas').
+progenitor('Rene', 'Douglas').
 progenitor('Margoth', 'Douglas').
-progenitor('René', 'Johnny').
+progenitor('Rene', 'Johnny').
 progenitor('Margoth', 'Johnny').
-progenitor('René', 'Marleny').
+progenitor('Rene', 'Marleny').
 progenitor('Margoth', 'Marleny').
 progenitor('Douglas', 'Douglas Jr.').
 progenitor('Glendy', 'Douglas Jr.').
@@ -81,27 +81,27 @@ progenitor('Vinicio', 'Gabriela').
 progenitor('Marleny', 'Gabriela').
 progenitor('Douglas', 'Paola').
 progenitor('Glendy', 'Paola').
-progenitor('Douglas', 'María Andreé').
-progenitor('Glendy', 'María Andreé').
+progenitor('Douglas', 'Maria Andree').
+progenitor('Glendy', 'Maria Andree').
 progenitor('Johnny', 'Johnny Jr.').
-progenitor('María Elena', 'Johnny Jr.').
+progenitor('Maria Elena', 'Johnny Jr.').
 progenitor('Johnny', 'Fernando').
-progenitor('María Elena', 'Fernando').
-progenitor('Johnny', 'María Alejandra').
-progenitor('María Elena', 'María Alejandra').
+progenitor('Maria Elena', 'Fernando').
+progenitor('Johnny', 'Maria Alejandra').
+progenitor('Maria Elena', 'Maria Alejandra').
 
 mujer('Glendy').
 mujer('Paola').
 mujer('Margoth').
-mujer('María Andreé').
-mujer('María Elena').
-mujer('María Alejandra').
+mujer('Maria Andree').
+mujer('Maria Elena').
+mujer('Maria Alejandra').
 mujer('Gabriela').
 mujer('Marleny').
 
 hombre('Douglas Jr.').
 hombre('Douglas').
-hombre('René').
+hombre('Rene').
 hombre('Johnny').
 hombre('Johnny Jr.').
 hombre('Daniel').
