@@ -1,17 +1,88 @@
-loves(romeo, juliet).
+% PROYECTO 4 - Lógica Matemática
+% 13 de noviembre del 2020
 
-loves(juliet, romeo) :-
-    loves(romeo, juliet).
+padre(X, Y) :-
+    progenitor(X, Y),
+    hombre(X).
 
-relacionado(X, Y) :-
+madre(X, Y) :-
+    progenitor(X, Y),
+    mujer(X).
+
+hijo(X, Y) :-
+    progenitor(Y, X),
+    hombre(X).
+
+hija(X, Y) :-
+    progenitor(Y, X),
+    mujer(X).
+
+tio(X, Y) :-
+    progenitor(W, X),
+    progenitor(W, Z),
+    X \= Z,
+    progenitor(Z, Y),
+    hombre(X).
+
+tia(X, Y) :-
+    progenitor(W, X),
+    progenitor(W, Z),
+    X \= Z,
+    progenitor(Z, Y),
+    mujer(X).
+
+sobrino(X, Y) :-
+    progenitor(W, Y),
+    progenitor(W, Z),
+    Y \= Z,
+    progenitor(Z, X),
+    hombre(X).
+
+sobrina(X, Y) :-
+    progenitor(W, Y),
+    progenitor(W, Z),
+    Y \= Z,
+    progenitor(Z, X),
+    mujer(X).
+
+abuelo(X, Y) :-
     progenitor(X, Z),
-    relacionado(Z, Y).
+    progenitor(Z, Y),
+    hombre(X).
 
+abuela(X, Y) :-
+    progenitor(X, Z),
+    progenitor(Z, Y),
+    mujer(X).
 
+hermano(X, Y) :-
+    progenitor(Z, X),
+    progenitor(Z, Y),
+    X \= Y,
+    hombre(X).
+
+hermana(X, Y) :-
+    progenitor(Z, X),
+    progenitor(Z, Y),
+    X \= Y,
+    mujer(X).
+
+progenitor('René', 'Douglas').
+progenitor('Margoth', 'Douglas').
+progenitor('René', 'Johnny').
+progenitor('Margoth', 'Johnny').
+progenitor('René', 'Marleny').
+progenitor('Margoth', 'Marleny').
 progenitor('Douglas', 'Douglas Jr.').
 progenitor('Glendy', 'Douglas Jr.').
+progenitor('Vinicio', 'Daniel').
+progenitor('Marleny', 'Daniel').
+progenitor('Vinicio', 'Gabriela').
+progenitor('Marleny', 'Gabriela').
 progenitor('Douglas', 'Paola').
 progenitor('Glendy', 'Paola').
+progenitor('Douglas', 'María Andreé').
+progenitor('Glendy', 'María Andreé').
 progenitor('Johnny', 'Johnny Jr.').
 progenitor('María Elena', 'Johnny Jr.').
 progenitor('Johnny', 'Fernando').
@@ -21,94 +92,18 @@ progenitor('María Elena', 'María Alejandra').
 
 mujer('Glendy').
 mujer('Paola').
+mujer('Margoth').
 mujer('María Andreé').
 mujer('María Elena').
 mujer('María Alejandra').
+mujer('Gabriela').
+mujer('Marleny').
 
 hombre('Douglas Jr.').
 hombre('Douglas').
+hombre('René').
 hombre('Johnny').
 hombre('Johnny Jr.').
+hombre('Daniel').
+hombre('Vinicio').
 hombre('Fernando').
-
-padre('Douglas', 'Douglas Jr.').
-padre('Douglas', 'Paola').
-padre('Douglas', 'María Andreé').
-padre('Johnny', 'Johnny Jr.').
-padre('Johnny', 'Fernando').
-padre('Johnny', 'María Alejandra').
-
-madre('Glendy', 'Douglas Jr.').
-madre('Glendy', 'Paola').
-madre('Glendy', 'María Andreé').
-madre('María Elena', 'Johnny Jr.').
-madre('María Elena', 'Fernando').
-madre('María Elena', 'María Alejandra').
-
-hijo('Douglas Jr.', 'Glendy').
-hijo('Douglas Jr.', 'Douglas').
-hijo('Johnny Jr.', 'Johnny').
-hijo('Johnny Jr.', 'Marían Elena').
-hijo('Fernando', 'Johnny').
-hijo('Fernando', 'Marían Elena').
-
-hija('Paola', 'Glendy').
-hija('Paola', 'Douglas').
-hija('María Andreé', 'Glendy').
-hija('María Andreé', 'Douglas').
-hija('María Alejandra', 'Johnny').
-hija('María Alejandra', 'Marían Elena').
-
-abuelo('René', 'Douglas Jr.').
-abuelo('René', 'María Andreé').
-abuelo('René', 'Paola').
-abuelo('René', 'Johnny Jr.').
-abuelo('René', 'Fernando').
-abuelo('René', 'María Alejandra').
-
-abuelo('Margoth', 'Douglas Jr.').
-abuelo('Margoth', 'María Andreé').
-abuelo('Margoth', 'Paola').
-abuelo('Margoth', 'Johnny Jr.').
-abuelo('Margoth', 'Fernando').
-abuelo('Margoth', 'María Alejandra').
-
-hermano('Douglas Jr.', 'Paola').
-hermano('Douglas Jr.', 'María Andreé').
-hermano('Fernando', 'María Alejandra').
-hermano('Johnny Jr.', 'María Alejandra').
-
-hermana('Paola', 'María Andreé').
-hermana('Paola', 'Douglas Jr.').
-hermana('María Andreé', 'Paola').
-hermana('María Andreé', 'Douglas Jr.').
-hermana('María Alejandra', 'Fernando').
-hermana('María Alejandra', 'Johnny Jr.').
-
-tio('Johnny', 'Douglas Jr.').
-tio('Johnny', 'Paola').
-tio('Johnny', 'María Andreé').
-tio('Douglas', 'Johnny Jr.').
-tio('Douglas', 'Fernando').
-tio('Douglas', 'María Alejandra').
-
-tia('María Elena', 'Douglas Jr.').
-tia('María Elena', 'Paola').
-tia('María Elena', 'María Andreé').
-tia('Glendy', 'Johnny Jr.').
-tia('Glendy', 'Fernando').
-tia('Glendy', 'María Alejandra').
-
-sobrino('Douglas Jr.', 'Johnny').
-sobrino('Douglas Jr.', 'María Elena').
-sobrino('Fernando', 'Douglas').
-sobrino('Johnny jr.', 'Douglas').
-sobrino('Fernando', 'Glendy').
-sobrino('Johnny jr.', 'Glendy').
-
-sobrina('Paola Jr.', 'Johnny').
-sobrina('Paola Jr.', 'María Elena').
-sobrina('María Andreé', 'Johnny').
-sobrina('María Andreé', 'María Elena').
-sobrina('María Alejandra', 'Douglas').
-sobrina('María Alejandra', 'Glendy').
