@@ -1,4 +1,5 @@
-/* Inciso 2 Proyecto 4 LM
+/* 
+Inciso 2 Proyecto 4 LM
 Caminos entre nodos
 Referencia: https://www.cpp.edu/~jrfisher/www/prolog_tutorial/2_15pl.txt
 */

@@ -1,5 +1,6 @@
 % PROYECTO 4 - Lógica Matemática
 % 13 de noviembre del 2020
+% Inciso 1
 
 padre(X, Y) :-
     progenitor(X, Y),
